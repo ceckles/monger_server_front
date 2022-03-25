@@ -1,32 +1,25 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Tabs } from '@mantine/core';
+import { Photo, MessageCircle, Settings } from 'tabler-icons-react';
 
 export default function MenuBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Tabs color="orange" variant="pills" tabPadding="xl"
+    styles={{
+      root: { color: 'red' },
+      tabsListWrapper: { color: 'red' },
+      tabsList: { color: 'red' },
+      body: { color: 'white' },
+      tabControl: { color: 'red' },
+      tabActive: { color: 'red' },
+      tabInner: { color: 'red' },
+      tabLabel: { color: 'red' },
+      tabIcon: { color: 'red' },
+    }}
+    >
+      <Tabs.Tab label="Gallery" icon={<Photo size={14} />}>Gallery tab content</Tabs.Tab>
+      <Tabs.Tab label="Messages" icon={<MessageCircle size={14} />}>Messages tab content</Tabs.Tab>
+      <Tabs.Tab label="Settings" icon={<Settings size={14} />}>Settings tab content</Tabs.Tab>
+    </Tabs>
   );
 }

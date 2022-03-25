@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { NotificationsProvider } from '@mantine/notifications';
+
 ReactDOM.render(
   <React.StrictMode>
+  <NotificationsProvider position="top-right" zIndex={2077} limit={5}>
     <App />
+  </NotificationsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
